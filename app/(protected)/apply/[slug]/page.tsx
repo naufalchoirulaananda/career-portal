@@ -198,7 +198,10 @@ export default function Page() {
       document.querySelector<HTMLInputElement>('input[type="tel"]');
     const phone = phoneInput?.value.trim() || "";
     const domicileValue = selected || query;
-    const dob = date ? date.toISOString().split("T")[0] : null;
+    const dob = date
+      ? date.toLocaleDateString("en-CA")
+    : null;
+
 
     if (!photo) {
       newErrors.photo = "Required";
